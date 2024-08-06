@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number checker</title>
+    <style>
+
+        button {
+            background-color: #210155;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body style="margin:25%">
+        <h1>Prime Number check</h1>
+        <input type="number" id="numinp" placeholder="Enter a number">
+        <button onclick="primecheck()">Check</button>
+        <p id="result"></p>
+    <script>
+    function primecheck() {
+    let number = document.getElementById('numinp').value;
+    let result;
+    let flag = true
+
+    for (let i = 2; i <= number/2; i++) {
+        if (number%i === 0){
+            flag = false;
+            break;
+        }
+    }
+    result = flag ? 'prime' : 'not prime';
+
+    document.getElementById('result').innerText = "The number " + number + " is "+ result;
+}
+
+    </script>
+</body>
+</html>
